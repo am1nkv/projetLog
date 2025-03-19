@@ -8,7 +8,7 @@ public class ClientBTTP {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Demande ? l'utilisateur d'entrer l'URL BTTP
+        // Demande ? L'utilisateur d'entrer l'URL BTTP
         System.out.print("Entrez l'URL du serveur (ex: BTTP:localhost:1234) : ");
         String url = scanner.nextLine();
 
