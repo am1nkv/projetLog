@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmpruntException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmpruntException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReservationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReservationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ClientBTTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBTTP.java" afterDir="false" />
-    </list>
-    <list id="749e01be-bb57-4a49-a68a-ac1fadddcf0e" name="Changes by AYINDE Alya" comment="">
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceRetour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceRetour.java" afterDir="false" />
-    </list>
+    <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet" />
+    <list id="749e01be-bb57-4a49-a68a-ac1fadddcf0e" name="Changes by AYINDE Alya" comment="suite code projet" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,8 +81,17 @@
       <option name="presentableId" value="Default" />
       <updated>1741792140406</updated>
       <workItem from="1741792575113" duration="4238000" />
-      <workItem from="1742389861566" duration="4934000" />
+      <workItem from="1742389861566" duration="5026000" />
     </task>
+    <task id="LOCAL-00001" summary="suite code projet">
+      <option name="closed" value="true" />
+      <created>1742397764289</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742397764289</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,5 +107,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="suite code projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="suite code projet" />
   </component>
 </project>
