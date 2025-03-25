@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Serveur/AppliServeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03097296-88e2-47dd-b77e-4e52d1f21488.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/03097296-88e2-47dd-b77e-4e52d1f21488.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85edbbbd-6bae-47af-a80a-d97101c0fc96.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/85edbbbd-6bae-47af-a80a-d97101c0fc96.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Abonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Abonne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/DVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmpruntException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/EmpruntException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/IDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Livres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Livres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReservationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/ReservationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur/Serveur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
@@ -57,19 +67,26 @@
   "keyToString": {
     "Application.AppliServeur.executor": "Run",
     "Application.ClientBTTP.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nesri/Documents/tp4ar",
+    "last_opened_file_path": "C:/Users/nesri/Downloads/sqlite-jdbc-3.49.1.0.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/aminakarmenova/Downloads/projet_archi/projetArchiLogi/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {

@@ -1,3 +1,5 @@
+package Documents;
+
 public interface IDocument {
     int numero();
     // exception si déjà réservé ou emprunté

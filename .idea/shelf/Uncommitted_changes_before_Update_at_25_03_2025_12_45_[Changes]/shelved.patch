@@ -1,0 +1,352 @@
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        //TIP Press <shortcut actionId=\"ShowIntentionActions\"/> with your caret at the highlighted text\r\n        // to see how IntelliJ IDEA suggests fixing it.\r\n        System.out.printf(\"Hello and welcome!\");\r\n\r\n        for (int i = 1; i <= 5; i++) {\r\n            //TIP Press <shortcut actionId=\"Debug\"/> to start debugging your code. We have set one <icon src=\"AllIcons.Debugger.Db_set_breakpoint\"/> breakpoint\r\n            // for you, but you can always add more by pressing <shortcut actionId=\"ToggleLineBreakpoint\"/>.\r\n            System.out.println(\"i = \" + i);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/Main.java	(date 1742899610692)
+@@ -4,7 +4,7 @@
+     public static void main(String[] args) {
+         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+         // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
++        System.out.print("Hello and welcome!");
+ 
+         for (int i = 1; i <= 5; i++) {
+             //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+Index: src/Abonne.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Date;\r\n\r\npublic class Abonne {\r\n    private int num;\r\n    private String nom;\r\n    private Date date ;\r\n\r\n    public Abonne(int num, String nom, Date date) {\r\n        this.num = num;\r\n        this.nom = nom;\r\n        this.date = date;\r\n    }\r\n\r\n    public int getNum() {\r\n        return num;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Abonne.java b/src/Abonne.java
+--- a/src/Abonne.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/Abonne.java	(date 1742899610615)
+@@ -1,9 +1,9 @@
+ import java.util.Date;
+ 
+ public class Abonne {
+-    private int num;
+-    private String nom;
+-    private Date date ;
++    private final int num;
++    private final String nom;
++    private final Date date ;
+ 
+     public Abonne(int num, String nom, Date date) {
+         this.num = num;
+Index: src/service/ServiceEmprunt.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package service;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.IOException;\r\nimport java.io.InputStreamReader;\r\nimport java.io.PrintWriter;\r\nimport java.net.Socket;\r\n\r\npublic class ServiceEmprunt extends Service {\r\n\r\n    public ServiceEmprunt(Socket socket) {\r\n        super(socket);\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        System.out.println(\"********* Connexion démarrée : \" + this.socket.getInetAddress());\r\n\r\n        try {\r\n            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));\r\n            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);\r\n\r\n            // Envoi du message initial\r\n            out.println(\"Donne nous le numéro d'abonné  :\");\r\n            int nbAbo= Integer.parseInt(in.readLine());\r\n            out.println(\"Donne nous le numéro de document que tu souhaiites réservé :\");\r\n            int nbDoc = Integer.parseInt(in.readLine());\r\n        }\r\n        catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n        System.out.println(\"********* Connexion terminée\");\r\n        try {\r\n            socket.close();\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/service/ServiceEmprunt.java b/src/service/ServiceEmprunt.java
+--- a/src/service/ServiceEmprunt.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/service/ServiceEmprunt.java	(date 1742898405426)
+@@ -1,11 +1,11 @@
+ package service;
+-
+ import java.io.BufferedReader;
+ import java.io.IOException;
+ import java.io.InputStreamReader;
+ import java.io.PrintWriter;
+ import java.net.Socket;
+ 
++
+ public class ServiceEmprunt extends Service {
+ 
+     public ServiceEmprunt(Socket socket) {
+Index: src/service/ServiceRetour.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package service;\r\n\r\nimport java.net.Socket;\r\n\r\npublic class ServiceRetour extends Service {\r\n    protected Socket socket;\r\n\r\n    public ServiceRetour(Socket socket){\r\n        super(socket);\r\n    }\r\n\r\n    public Socket getSocket() {\r\n        return socket;\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/service/ServiceRetour.java b/src/service/ServiceRetour.java
+--- a/src/service/ServiceRetour.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/service/ServiceRetour.java	(date 1742898185207)
+@@ -1,11 +1,12 @@
+ package service;
+-
++import service.Service;
+ import java.net.Socket;
+ 
+ public class ServiceRetour extends Service {
+     protected Socket socket;
+ 
+     public ServiceRetour(Socket socket){
++
+         super(socket);
+     }
+ 
+Index: src/DVD.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class DVD implements IDocument{\r\n    private String title;\r\n    private int numero;\r\n    private boolean adulte;\r\n\r\n    public DVD(String title, int numero, boolean adulte){\r\n        this.title = title;\r\n        this.numero = numero;\r\n        this.adulte = adulte;\r\n\r\n    }\r\n    @Override\r\n    public int numero() {\r\n        return numero;\r\n    }\r\n\r\n    @Override\r\n    public void reserver(Abonne ab) throws ReservationException {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void emprunter(Abonne ab) throws EmpruntException {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void retourner() {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DVD.java b/src/DVD.java
+--- a/src/DVD.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/DVD.java	(date 1742899610595)
+@@ -1,7 +1,7 @@
+ public class DVD implements IDocument{
+-    private String title;
+-    private int numero;
+-    private boolean adulte;
++    private final String title;
++    private final int numero;
++    private final boolean adulte;
+ 
+     public DVD(String title, int numero, boolean adulte){
+         this.title = title;
+Index: src/Serveur/Serveur.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Serveur;\r\n\r\n\r\nimport service.Service;\r\n\r\nimport java.io.IOException;\r\nimport java.lang.reflect.InvocationTargetException;\r\nimport java.net.ServerSocket;\r\nimport java.net.Socket;\r\n\r\npublic class Serveur implements Runnable {\r\n    private ServerSocket listen_socket;\r\n    private int port;\r\n    private Class<? extends Service> serviceClass; // La classe du service, limitée aux sous-classes de Service\r\n\r\n    public Serveur(Class<? extends Service> serviceClass, int port) throws IOException {\r\n        this.port = port;\r\n        this.listen_socket = new ServerSocket(this.port);\r\n        this.serviceClass = serviceClass;\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        try {\r\n            System.err.println(\"Lancement du serveur au port \" + this.listen_socket.getLocalPort());\r\n            while (true) {\r\n                Socket socket = listen_socket.accept();\r\n                try {\r\n                    Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);\r\n                    new Thread(service).start();\r\n                } catch (InstantiationException e) {\r\n                    // En cas d'erreur lors de l'instanciation, imprime un message d'erreur\r\n                    System.err.println(\"Erreur lors de l'instanciation du service : \" + e.getMessage());\r\n                } catch (IllegalAccessException e) {\r\n                    // En cas d'acc?s interdit, imprime un message d'erreur\r\n                    System.err.println(\"Acc?s interdit lors de l'instanciation du service : \" + e.getMessage());\r\n                } catch (IllegalArgumentException e) {\r\n                    // En cas d'argument non valide, imprime un message d'erreur\r\n                    System.err.println(\"Argument non valide lors de l'instanciation du service : \" + e.getMessage());\r\n                } catch (InvocationTargetException e) {\r\n                    // En cas d'exception levée par la méthode invoquée, imprime un message d'erreur\r\n                    System.err.println(\"Exception levée lors de l'invocation de la méthode : \" + e.getCause().getMessage());\r\n                } catch (NoSuchMethodException e) {\r\n                    // En cas de méthode non trouvée, imprime un message d'erreur\r\n                    System.err.println(\"Méthode non trouvée lors de l'instanciation du service : \" + e.getMessage());\r\n                } catch (SecurityException e) {\r\n                    // En cas de violation de la sécurité, imprime un message d'erreur\r\n                    System.err.println(\"Violation de la sécurité lors de l'instanciation du service : \" + e.getMessage());\r\n                }\r\n            }\r\n        } catch (IOException e) {\r\n            try {\r\n                this.listen_socket.close();\r\n            } catch (IOException e1) {\r\n                // Ignorer l'exception\r\n            }\r\n            System.err.println(\"Arr?t du serveur au port \" + this.listen_socket.getLocalPort());\r\n        }\r\n    }\r\n\r\n    @Override\r\n    protected void finalize() throws Throwable {\r\n        try {\r\n            if (listen_socket != null && !listen_socket.isClosed()) {\r\n                listen_socket.close();\r\n            }\r\n        } catch (IOException e1) {\r\n            // Ignorer l'exception\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Serveur/Serveur.java b/src/Serveur/Serveur.java
+--- a/src/Serveur/Serveur.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/Serveur/Serveur.java	(date 1742899610655)
+@@ -1,19 +1,17 @@
+ package Serveur;
+-
+-
+ import service.Service;
+-
+ import java.io.IOException;
+ import java.lang.reflect.InvocationTargetException;
+ import java.net.ServerSocket;
+ import java.net.Socket;
++import java.security.Provider;
+ 
+ public class Serveur implements Runnable {
+-    private ServerSocket listen_socket;
+-    private int port;
+-    private Class<? extends Service> serviceClass; // La classe du service, limitée aux sous-classes de Service
++    private final ServerSocket listen_socket;
++    private final int port;
++    private final Class<? extends Provider.Service> serviceClass; // La classe du service, limitée aux sous-classes de Service
+ 
+-    public Serveur(Class<? extends Service> serviceClass, int port) throws IOException {
++    public Serveur(Class<? extends Provider.Service> serviceClass, int port) throws IOException {
+         this.port = port;
+         this.listen_socket = new ServerSocket(this.port);
+         this.serviceClass = serviceClass;
+@@ -26,7 +24,7 @@
+             while (true) {
+                 Socket socket = listen_socket.accept();
+                 try {
+-                    Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
++                   Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
+                     new Thread(service).start();
+                 } catch (InstantiationException e) {
+                     // En cas d'erreur lors de l'instanciation, imprime un message d'erreur
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"c9640d81-0b6d-4a4c-89f2-d817e966da4e\" name=\"Changes\" comment=\"suite code projet\" />\r\n    <list id=\"749e01be-bb57-4a49-a68a-ac1fadddcf0e\" name=\"Changes by AYINDE Alya\" comment=\"suite code projet\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;Nsrn17&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/am1nkv/projetLog.git&quot;,\r\n    &quot;accountId&quot;: &quot;c63a35b8-c7aa-4e30-991b-d60c4d21f28b&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2uDniLrkdO7Drzkv76EhFBdHZsM\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/nesri/Documents/tp4ar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/aminakarmenova/Downloads/projet_archi/projetArchiLogi/src/Main.java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"c9640d81-0b6d-4a4c-89f2-d817e966da4e\" name=\"Changes\" comment=\"\" />\r\n      <created>1741792140406</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1741792140406</updated>\r\n      <workItem from=\"1741792575113\" duration=\"4238000\" />\r\n      <workItem from=\"1742389861566\" duration=\"5026000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"suite code projet\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1742397764289</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1742397764289</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"suite code projet\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"suite code projet\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/.idea/workspace.xml	(date 1742899610853)
+@@ -4,7 +4,18 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet" />
++    <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Abonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Abonne.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DVD.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Livres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Livres.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur/Serveur.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/service/ServiceRetour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceRetour.java" afterDir="false" />
++    </list>
+     <list id="749e01be-bb57-4a49-a68a-ac1fadddcf0e" name="Changes by AYINDE Alya" comment="suite code projet" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -30,7 +41,7 @@
+ }</component>
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/am1nkv/projetLog.git&quot;,
++    &quot;url&quot;: &quot;https://github.com/am1nkv/projetLog&quot;,
+     &quot;accountId&quot;: &quot;c63a35b8-c7aa-4e30-991b-d60c4d21f28b&quot;
+   }
+ }</component>
+@@ -43,32 +54,55 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nesri/Documents/tp4ar&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/aminakarmenova/Downloads/projet_archi/projetArchiLogi/src/Main.java&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.ClientBTTP.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "git-widget-placeholder": "main",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/nesri/Documents/ArchiLog",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "onboarding.tips.debug.path": "/Users/aminakarmenova/Downloads/projet_archi/projetArchiLogi/src/Main.java",
++    "run.code.analysis.last.selected.profile": "pProject Default",
++    "vue.rearranger.settings.migration": "true"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CreateClassDialog.RecentsKey">
+       <recent name="" />
+     </key>
+   </component>
++  <component name="RunManager">
++    <configuration name="ClientBTTP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="client.ClientBTTP" />
++      <module name="projetArchiLogi" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="client.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.ClientBTTP" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
++        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
++        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -82,6 +116,11 @@
+       <updated>1741792140406</updated>
+       <workItem from="1741792575113" duration="4238000" />
+       <workItem from="1742389861566" duration="5026000" />
++      <workItem from="1742823821035" duration="115000" />
++      <workItem from="1742823946092" duration="3112000" />
++      <workItem from="1742897550288" duration="332000" />
++      <workItem from="1742897897582" duration="503000" />
++      <workItem from="1742899593372" duration="18000" />
+     </task>
+     <task id="LOCAL-00001" summary="suite code projet">
+       <option name="closed" value="true" />
+Index: src/service/ServiceReservation.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package service;\r\n\r\nimport java.io.BufferedReader;\r\nimport java.io.IOException;\r\nimport java.io.InputStreamReader;\r\nimport java.io.PrintWriter;\r\nimport java.net.Socket;\r\nimport service.Service;\r\n\r\npublic class ServiceReservation extends Service {\r\n\r\n    protected Socket socket;\r\n\r\n    public ServiceReservation(Socket socket){\r\n        super(socket);\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        try (\r\n                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));\r\n                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);\r\n        ) {\r\n            // Lecture des données du client\r\n            String numeroAbonne = in.readLine();\r\n            String numeroDocument = in.readLine();\r\n\r\n            // Vérification des données\r\n            if (numeroAbonne != null && numeroDocument != null) {\r\n                boolean success = reserverDocument(numeroAbonne, numeroDocument);\r\n\r\n                // Envoi de la réponse au client\r\n                if (success) {\r\n                    out.println(\"Réservation confirmée !\");\r\n                } else {\r\n                    out.println(\"Échec de la réservation !\");\r\n                }\r\n            } else {\r\n                out.println(\"Données invalides !\");\r\n            }\r\n        } catch (IOException e) {\r\n            System.err.println(\"Erreur réseau : \" + e.getMessage());\r\n        } finally {\r\n            try {\r\n                socket.close();\r\n            } catch (IOException e) {\r\n                System.err.println(\"Erreur lors de la fermeture du socket : \" + e.getMessage());\r\n            }\r\n        }\r\n    }\r\n\r\n    // Simule la réservation (à adapter selon ton système)\r\n    private boolean reserverDocument(String numeroAbonne, String numeroDocument) {\r\n        // Ici, tu peux ajouter une interaction avec une base de données ou une liste en mémoire\r\n        System.out.println(\"Réservation pour l'abonné \" + numeroAbonne + \" du document \" + numeroDocument);\r\n        return true; // Supposons que la réservation est toujours acceptée pour l'instant\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/service/ServiceReservation.java b/src/service/ServiceReservation.java
+--- a/src/service/ServiceReservation.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/service/ServiceReservation.java	(date 1742899610637)
+@@ -5,13 +5,13 @@
+ import java.io.InputStreamReader;
+ import java.io.PrintWriter;
+ import java.net.Socket;
+-import service.Service;
+ 
+ public class ServiceReservation extends Service {
+ 
+     protected Socket socket;
+ 
+     public ServiceReservation(Socket socket){
++
+         super(socket);
+     }
+ 
+@@ -19,7 +19,7 @@
+     public void run() {
+         try (
+                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
++                PrintWriter out = new PrintWriter(socket.getOutputStream(), true)
+         ) {
+             // Lecture des données du client
+             String numeroAbonne = in.readLine();
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"openjdk-21 (5)\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/.idea/misc.xml	(date 1742823823136)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21 (5)" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-21 (5)" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/Livres.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Livres implements IDocument {\r\n    private String title;\r\n    private int numero;\r\n    private int nb_pages;\r\n\r\n    public Livres(String title, int numero, int nb_pages) {\r\n        this.title = title;\r\n        this.numero = numero;\r\n        this.nb_pages = nb_pages;\r\n    }\r\n    @Override\r\n    public int numero() {\r\n        return numero;\r\n    }\r\n\r\n    @Override\r\n    public void reserver(Abonne ab) throws ReservationException {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void emprunter(Abonne ab) throws EmpruntException {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void retourner() {\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Livres.java b/src/Livres.java
+--- a/src/Livres.java	(revision ba5fa391b4e53d1f1c85324138fa5a4d20b65144)
++++ b/src/Livres.java	(date 1742899610674)
+@@ -1,7 +1,7 @@
+ public class Livres implements IDocument {
+-    private String title;
+-    private int numero;
+-    private int nb_pages;
++    private final String title;
++    private final int numero;
++    private final int nb_pages;
+ 
+     public Livres(String title, int numero, int nb_pages) {
+         this.title = title;

@@ -1,17 +1,15 @@
 package Serveur;
-
-
 import service.Service;
-
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.security.Provider;
 
 public class Serveur implements Runnable {
-    private ServerSocket listen_socket;
-    private int port;
-    private Class<? extends Service> serviceClass; // La classe du service, limitée aux sous-classes de Service
+    private final ServerSocket listen_socket;
+    private final int port;
+    private final Class<? extends Service> serviceClass; // La classe du service, limitée aux sous-classes de Service
 
     public Serveur(Class<? extends Service> serviceClass, int port) throws IOException {
         this.port = port;
@@ -26,7 +24,7 @@ public class Serveur implements Runnable {
             while (true) {
                 Socket socket = listen_socket.accept();
                 try {
-                    Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
+                   Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
                     service.setSocket(socket);
                     new Thread(service).start();
 

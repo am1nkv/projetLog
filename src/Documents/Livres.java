@@ -1,7 +1,9 @@
+package Documents;
+
 public class Livres implements IDocument {
-    private String title;
-    private int numero;
-    private int nb_pages;
+    private final String title;
+    private final int numero;
+    private final int nb_pages;
 
     public Livres(String title, int numero, int nb_pages) {
         this.title = title;

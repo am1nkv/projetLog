@@ -1,7 +1,9 @@
-public class DVD implements IDocument{
-    private String title;
-    private int numero;
-    private boolean adulte;
+package Documents;
+
+public class DVD implements IDocument {
+    private final String title;
+    private final int numero;
+    private final boolean adulte;
 
     public DVD(String title, int numero, boolean adulte){
         this.title = title;
