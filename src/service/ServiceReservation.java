@@ -26,9 +26,9 @@ public class ServiceReservation extends Service {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true)
         ) {
             // Envoi du message initial
-            out.println("Donne nous le numéro d'abonné  :");
+            out.println("Donne nous le numero d'abonne  :");
             int nbAbo= Integer.parseInt(in.readLine());
-            out.println("Donne nous le numéro de document que tu souhaiites réservé :");
+            out.println("Donne nous le numero de document que tu souhaiites reserver :");
             int nbDoc = Integer.parseInt(in.readLine());
 
             reserverDocument(nbAbo,nbDoc);
@@ -64,7 +64,6 @@ public class ServiceReservation extends Service {
     private synchronized void reserverDocument(int numeroAbonne, int numeroDocument) {
         reservation(numeroAbonne,numeroDocument);
         System.out.println("Réservation pour l'abonné " + numeroAbonne + " du document " + numeroDocument);
-
     }
 
 }

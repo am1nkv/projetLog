@@ -31,7 +31,7 @@ public class ClientBTTP {
         try {
             port = Integer.parseInt(parts[1]);
         } catch (NumberFormatException e) {
-            System.out.println("Erreur : Le port doit ?tre un nombre.");
+            System.out.println("Erreur : Le port doit être un nombre.");
             scanner.close();
             return;
         }
@@ -40,14 +40,14 @@ public class ClientBTTP {
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
-            System.out.println("Connecté au serveur BTTP sur " + host + ":" + port);
+            System.out.println("Connecte au serveur BTTP sur " + host + ":" + port);
 
             // Lire le message initial du serveur
             String serverMessage = in.readLine();
-            System.out.println("Serveur: " + serverMessage);
+            System.out.println("Serveur : " + serverMessage);
 
             while (true) {
-                System.out.print("Vous: ");
+                System.out.print("->");
                 String userInput = scanner.nextLine();
                 out.println(userInput); // Envoyer le message au serveur
 

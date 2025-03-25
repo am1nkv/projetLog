@@ -5,6 +5,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import static DB.Bd.emprunt;
+import static DB.Bd.reservation;
+
 
 public class ServiceEmprunt extends Service {
 
@@ -21,10 +24,11 @@ public class ServiceEmprunt extends Service {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             // Envoi du message initial
-            out.println("Donne nous le numéro d'abonné  :");
+            out.println("Donne nous le numero d'abonne  :");
             int nbAbo= Integer.parseInt(in.readLine());
-            out.println("Donne nous le numéro de document que tu souhaiites réservé :");
+            out.println("Donne nous le numero de document que tu souhaites emprunter :");
             int nbDoc = Integer.parseInt(in.readLine());
+            emprunterDocument(nbAbo, nbDoc);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -36,5 +40,10 @@ public class ServiceEmprunt extends Service {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private synchronized void emprunterDocument(int numeroAbonne, int numeroDocument) {
+        emprunt(numeroAbonne,numeroDocument);
+        System.out.println("Emprunt pour l'abonné " + numeroAbonne + " du document " + numeroDocument);
+
     }
 }
