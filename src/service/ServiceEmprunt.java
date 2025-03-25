@@ -14,7 +14,7 @@ public class ServiceEmprunt extends Service {
 
     @Override
     public void run() {
-        System.out.println("********* Connexion démarrée : " + this.socket.getInetAddress());
+        System.out.println("********* Connexion démarrée au service Emprunt: " + this.socket.getInetAddress());
 
         try {
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

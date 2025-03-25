@@ -9,7 +9,7 @@ import service.Service;
 
 public class ServiceReservation extends Service {
 
-    protected Socket socket;
+
 
     public ServiceReservation(Socket socket){
         super(socket);
@@ -17,6 +17,7 @@ public class ServiceReservation extends Service {
 
     @Override
     public void run() {
+        System.out.println("********* Connexion démarrée au service Reservation: " + this.socket.getInetAddress());
         try (
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);

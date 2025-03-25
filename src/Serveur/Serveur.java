@@ -27,7 +27,9 @@ public class Serveur implements Runnable {
                 Socket socket = listen_socket.accept();
                 try {
                     Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
+                    service.setSocket(socket);
                     new Thread(service).start();
+
                 } catch (InstantiationException e) {
                     // En cas d'erreur lors de l'instanciation, imprime un message d'erreur
                     System.err.println("Erreur lors de l'instanciation du service : " + e.getMessage());
