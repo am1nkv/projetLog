@@ -31,7 +31,7 @@ public class ClientBTTP {
         try {
             port = Integer.parseInt(parts[1]);
         } catch (NumberFormatException e) {
-            System.out.println("Erreur : Le port doit être un nombre.");
+            System.out.println("Erreur : Le port doit etre un nombre.");
             scanner.close();
             return;
         }

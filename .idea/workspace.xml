@@ -7,16 +7,45 @@
     <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7803c591-273d-4b2f-8ffd-a52b24c4d620.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7803c591-273d-4b2f-8ffd-a52b24c4d620/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e8c91a84-53bf-46ca-8936-dda5f771b8e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e8c91a84-53bf-46ca-8936-dda5f771b8e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DB.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/Abonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Abonne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/DVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/EmpruntException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/EmpruntException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/IDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/IDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/Livres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Livres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serveur/AppliServeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur/AppliServeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur/Serveur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceRetour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceRetour.java" afterDir="false" />
     </list>
-    <list id="400a0c12-fa64-4970-9fa2-a4211f4860e3" name="Changes by aminakarmenova" comment="" />
+    <list id="400a0c12-fa64-4970-9fa2-a4211f4860e3" name="Changes by aminakarmenova" comment="">
+      <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
+    </list>
     <list id="749e01be-bb57-4a49-a68a-ac1fadddcf0e" name="Changes by AYINDE Alya" comment="suite code projet" />
-    <list id="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" name="Changes by nesri" comment="" />
+    <list id="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" name="Changes by nesri" comment="">
+      <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/Abonne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Abonne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/EmpruntException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/EmpruntException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/Livres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/Livres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Documents/ReservationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Documents/ReservationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Serveur/Serveur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Serveur/Serveur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/ClientBTTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBTTP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceRetour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceRetour.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +74,134 @@
     &quot;accountId&quot;: &quot;d0399716-f5f5-44e0-b375-2451dda83ddf&quot;
   }
 }</component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/DB/Bd.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="8" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="3" end1="3" start2="9" end2="11" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="5" end1="5" start2="13" end2="14" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="8" end1="8" start2="17" end2="30" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="9" end1="10" start2="31" end2="47" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="13" end1="14" start2="50" end2="50" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="15" end1="17" start2="51" end2="51" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="18" end1="19" start2="52" end2="53" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="26" end1="27" start2="60" end2="60" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="28" end1="33" start2="61" end2="66" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="34" end1="36" start2="67" end2="68" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="37" end1="41" start2="69" end2="73" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="42" end1="44" start2="74" end2="75" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="45" end1="49" start2="76" end2="83" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="50" end1="53" start2="84" end2="95" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="54" end1="56" start2="96" end2="104" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="57" end1="72" start2="105" end2="159" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="74" end1="75" start2="161" end2="162" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="77" end1="78" start2="164" end2="166" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="81" end1="81" start2="169" end2="172" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="82" end1="86" start2="173" end2="175" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="87" end1="89" start2="176" end2="178" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="90" end1="93" start2="179" end2="181" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="94" end1="96" start2="182" end2="184" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="97" end1="99" start2="185" end2="190" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="100" end1="147" start2="191" end2="192" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="149" end1="150" start2="194" end2="195" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="152" end1="153" start2="197" end2="199" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="156" end1="164" start2="202" end2="206" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="165" end1="169" start2="207" end2="209" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="170" end1="178" start2="210" end2="235" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="179" end1="179" start2="236" end2="426" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Documents/Livres.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="7" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="6" end1="7" start2="11" end2="12" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="11" end1="11" start2="16" end2="21" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="12" end1="12" start2="22" end2="23" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="17" end1="17" start2="28" end2="67" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="19" end1="19" start2="69" end2="79" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="20" end1="20" start2="80" end2="98" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="24" end1="24" start2="102" end2="123" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="25" end1="25" start2="124" end2="145" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="30" end1="30" start2="150" end2="178" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="32" end1="32" start2="180" end2="181" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Documents/Abonne.java">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="4" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="7" end1="8" start2="8" end2="10" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="9" end1="10" start2="11" end2="12" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="12" end1="13" start2="14" end2="15" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="18" end1="19" start2="20" end2="48" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Documents/EmpruntException.java">
+      <ranges>
+        <range start1="4" end1="6" start2="4" end2="6" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="8" end1="10" start2="8" end2="8" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/service/ServiceRetour.java">
+      <ranges>
+        <range start1="8" end1="9" start2="8" end2="9" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="14" end1="14" start2="14" end2="15" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="18" end1="19" start2="19" end2="20" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="23" end1="28" start2="24" end2="25" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="29" end1="30" start2="26" end2="42" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="34" end1="34" start2="46" end2="47" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="42" end1="46" start2="55" end2="59" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/service/ServiceReservation.java">
+      <ranges>
+        <range start1="8" end1="8" start2="8" end2="11" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="9" end1="11" start2="12" end2="12" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="13" end1="15" start2="14" end2="14" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="22" end1="23" start2="21" end2="22" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="29" end1="37" start2="28" end2="44" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="38" end1="50" start2="45" end2="49" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="52" end1="53" start2="51" end2="56" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="62" end1="67" start2="65" end2="65" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Serveur/Serveur.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="12" end1="14" start2="13" end2="15" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="17" end1="17" start2="18" end2="19" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="25" end1="25" start2="27" end2="28" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="28" end1="28" start2="31" end2="32" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="35" end1="36" start2="39" end2="40" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="41" end1="42" start2="45" end2="46" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="44" end1="45" start2="48" end2="49" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="47" end1="48" start2="51" end2="52" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="56" end1="57" start2="60" end2="61" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/service/Service.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="4" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="6" end1="8" start2="8" end2="10" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="9" end1="9" start2="11" end2="12" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="10" end1="11" start2="13" end2="19" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="21" end1="21" start2="29" end2="32" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/service/ServiceEmprunt.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="3" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="6" end1="10" start2="8" end2="9" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="19" end1="20" start2="18" end2="19" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="26" end1="27" start2="25" end2="26" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="28" end1="29" start2="27" end2="34" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="30" end1="31" start2="35" end2="56" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="32" end1="33" start2="57" end2="58" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+        <range start1="36" end1="37" start2="61" end2="62" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
+        <range start1="43" end1="48" start2="68" end2="68" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
+        <range start1="49" end1="49" start2="69" end2="220" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -112,6 +269,7 @@
       <workItem from="1742827559452" duration="1073000" />
       <workItem from="1742898237390" duration="1902000" />
       <workItem from="1742900175827" duration="2798000" />
+      <workItem from="1743009955332" duration="7031000" />
     </task>
     <task id="LOCAL-00001" summary="suite code projet">
       <option name="closed" value="true" />
