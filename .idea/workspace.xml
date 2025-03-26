@@ -7,39 +7,16 @@
     <list default="true" id="c9640d81-0b6d-4a4c-89f2-d817e966da4e" name="Changes" comment="suite code projet">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03097296-88e2-47dd-b77e-4e52d1f21488.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/03097296-88e2-47dd-b77e-4e52d1f21488/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fef2d2a-0fef-4039-99cd-a2d01e16c4df.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fef2d2a-0fef-4039-99cd-a2d01e16c4df/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68a65cd8-caa9-4a82-8c55-2609cdc970ac.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/68a65cd8-caa9-4a82-8c55-2609cdc970ac/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70eb1348-125a-43ab-b830-ca3dbcb4597a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/70eb1348-125a-43ab-b830-ca3dbcb4597a/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7803c591-273d-4b2f-8ffd-a52b24c4d620.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7803c591-273d-4b2f-8ffd-a52b24c4d620.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85edbbbd-6bae-47af-a80a-d97101c0fc96.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/85edbbbd-6bae-47af-a80a-d97101c0fc96/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa47eacb-1617-4cf8-a6b2-17d1f2566020.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aa47eacb-1617-4cf8-a6b2-17d1f2566020/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1feebd4-5d8a-4bc2-bbf7-8aba6dbfc52b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c1feebd4-5d8a-4bc2-bbf7-8aba6dbfc52b/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b9ba062-10f9-4cd5-9e14-2b34ab11456d.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/DB.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
     </list>
-    <list id="400a0c12-fa64-4970-9fa2-a4211f4860e3" name="Changes by aminakarmenova" comment="">
-      <change beforePath="$PROJECT_DIR$/src/client/ClientBTTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBTTP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceEmprunt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceReservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceReservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/ServiceRetour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ServiceRetour.java" afterDir="false" />
-    </list>
+    <list id="400a0c12-fa64-4970-9fa2-a4211f4860e3" name="Changes by aminakarmenova" comment="" />
     <list id="749e01be-bb57-4a49-a68a-ac1fadddcf0e" name="Changes by AYINDE Alya" comment="suite code projet" />
-    <list id="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" name="Changes by nesri" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DB/Bd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB/Bd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/ClientBTTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/ClientBTTP.java" afterDir="false" />
-    </list>
+    <list id="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" name="Changes by nesri" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,42 +45,6 @@
     &quot;accountId&quot;: &quot;d0399716-f5f5-44e0-b375-2451dda83ddf&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/DB/Bd.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
-        <range start1="28" end1="30" start2="30" end2="33" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="32" end1="33" start2="35" end2="49" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="34" end1="37" start2="50" end2="53" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="38" end1="44" start2="54" end2="71" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="52" end1="52" start2="79" end2="166" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/service/ServiceReservation.java">
-      <ranges>
-        <range start1="28" end1="29" start2="28" end2="29" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-        <range start1="30" end1="31" start2="30" end2="31" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="66" end1="67" start2="66" end2="66" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/service/ServiceEmprunt.java">
-      <ranges>
-        <range start1="6" end1="6" start2="6" end2="9" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="23" end1="24" start2="26" end2="27" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-        <range start1="25" end1="26" start2="28" end2="29" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="27" end1="27" start2="30" end2="31" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-        <range start1="39" end1="39" start2="43" end2="48" changelist="c9640d81-0b6d-4a4c-89f2-d817e966da4e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/client/ClientBTTP.java">
-      <ranges>
-        <range start1="33" end1="34" start2="33" end2="34" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-        <range start1="42" end1="43" start2="42" end2="43" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-        <range start1="46" end1="47" start2="46" end2="47" changelist="5e4147d7-0f6d-48a7-b9d3-674b9ded0db1" />
-        <range start1="49" end1="50" start2="49" end2="50" changelist="400a0c12-fa64-4970-9fa2-a4211f4860e3" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>

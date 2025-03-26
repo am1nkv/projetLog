@@ -63,7 +63,7 @@ public class ServiceReservation extends Service {
 
     private synchronized void reserverDocument(int numeroAbonne, int numeroDocument) {
         reservation(numeroAbonne,numeroDocument);
-        System.out.println("Réservation pour l'abonné " + numeroAbonne + " du document " + numeroDocument);
+//        System.out.println("Réservation pour l'abonné " + numeroAbonne + " du document " + numeroDocument);
     }
 
 }

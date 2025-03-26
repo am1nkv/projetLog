@@ -30,7 +30,7 @@ public class Bd {
     public static void reservation(int numAbo, int numDoc) {
         String checkReservationQuery = "SELECT * FROM Reservation WHERE idabo = ? AND iddoc = ?"; // Vérifier si la réservation existe déjà
         String checkEmpruntQuery = "SELECT disponible FROM Document WHERE id_doc = ?"; // Vérifier si le document est disponible
-        String insertQuery = "INSERT INTO Reservation (idabo, iddoc, date_expi) VALUES (?, ? , ?)"; // Ajouter la réservation
+        String insertQuery = "INSERT INTO Reservation (idabo, iddoc, date_resa) VALUES (?, ? , ?)"; // Ajouter la réservation
 
         try (Connection conn = connect();
              PreparedStatement checkReservationStmt = conn.prepareStatement(checkReservationQuery)) {
@@ -65,7 +65,8 @@ public class Bd {
                                 //ajout date expiration
                                 insertStmt.setString(3, expirationStr);
                                 insertStmt.executeUpdate();
-                                System.out.println("Réservation ajoutée avec succès jusqu'à " + expirationStr);
+                                System.out.println("Réservation ajoutée avec succès de " + LocalDateTime.now() +  " jusqu'à " + expirationStr);
+                                checkReservation(numAbo,numDoc);
                             }
                         }
                     }
@@ -153,18 +154,25 @@ public class Bd {
         }
     }
 
-    public void checkReservation(int numAbo , int numDoc) throws SQLException {
+    public static void checkReservation(int numAbo, int numDoc) throws SQLException {
         String checkQuery = "SELECT date_resa FROM Reservation WHERE idabo = ? AND iddoc = ?";
         try(Connection conn = connect();
-        PreparedStatement p = conn.prepareStatement(checkQuery)){
+            PreparedStatement p = conn.prepareStatement(checkQuery)){
 
             p.setInt(1, numAbo);
             p.setInt(2, numDoc);
             ResultSet rs = p.executeQuery();
 
-            if(rs.next()) {
-                Date res = rs.getDate("date_resa");
-                
+            if (rs.next()) {
+                Timestamp timestamp = rs.getTimestamp("date_resa");
+                LocalDateTime dateResa = timestamp.toLocalDateTime();
+                LocalDateTime now = LocalDateTime.now();
+
+                if (dateResa.isBefore(now)) {
+                    System.out.println("La réservation a expiré.");
+                } else {
+                    System.out.println("La réservation est encore valide.");
+                }
             }
         }
     }
