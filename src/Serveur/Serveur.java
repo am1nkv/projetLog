@@ -29,7 +29,7 @@ public class Serveur implements Runnable {
                 try {
                    Service service = serviceClass.getDeclaredConstructor(Socket.class).newInstance(socket);
                     service.setSocket(socket);
-                    service.setBD(b);
+                    service.setBD(new Bd());
                     new Thread(service).start();
 
                 } catch (InstantiationException e) {

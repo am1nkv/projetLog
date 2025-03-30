@@ -13,20 +13,23 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 
-public class Bd {
-    private static final String BD = "sqlite:DB";
+public  class Bd {
+
     private HashMap<Integer, IDocument> documentHashMap;
     private HashMap<Integer, Abonne> abonneHashMap;
     private HashMap<Integer, Integer> emprunt;
     private HashMap<Integer, Integer> reservation;
 
-    public Bd() {
-        documentHashMap = new HashMap<>();
-        abonneHashMap = new HashMap<>();
-        emprunt = new HashMap<>();
-        reservation = new HashMap<>();
-        recupAbo();
-        recupDoc();
+    public  Bd() {
+        synchronized (this){
+            documentHashMap = new HashMap<>();
+            abonneHashMap = new HashMap<>();
+            emprunt = new HashMap<>();
+            reservation = new HashMap<>();
+
+            recupAbo();
+            recupDoc();
+            checkReservation();}
     }
 
     public synchronized HashMap<Integer, IDocument> getDocuments() {
@@ -49,17 +52,18 @@ public class Bd {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:DB.sqlite");
-            System.out.println("Connexion reussie à SQLite.");
+            conn = DriverManager.getConnection( "jdbc:sqlite:DB.sqlite?journal_mode=WAL&busy_timeout=30000");
+
         } catch (ClassNotFoundException e) {
             System.out.println("Erreur : Driver SQLite JDBC introuvable.");
         } catch (SQLException e) {
             System.out.println("Erreur de connexion : " + e.getMessage());
         }
+       ;
         return conn;
     }
 
-    public void recupAbo() {
+    public synchronized void recupAbo() {
         try (Connection conn = connect();) {
 
             String query = "SELECT * FROM abonne";
@@ -82,49 +86,65 @@ public class Bd {
         }
     }
 
-    public void recupDoc() {
+    public synchronized void recupDoc() {
+
         try (Connection conn = connect();) {
             String queryd = "SELECT * FROM Document";
             String queryr = "SELECT * FROM Reservation";
             String querye = "SELECT * FROM Emprunt";
+
             PreparedStatement stmt = conn.prepareStatement(queryd);
             PreparedStatement stmtr = conn.prepareStatement(queryr);
             PreparedStatement stmte = conn.prepareStatement(querye);
+
             ResultSet rs = stmt.executeQuery();
             ResultSet rsr = stmtr.executeQuery();
             ResultSet rse = stmte.executeQuery();
+
+            // Réinitialisation des listes pour éviter les doublons et assurer la cohérence
+            getDocuments().clear();
+            getReservation().clear();
+            getEmprunt().clear();
 
             while (rs.next()) {
                 int id_doc = rs.getInt("id_doc");
                 String nom_doc = rs.getString("nom_doc");
                 String disponible = rs.getString("disponible");
+                String type = rs.getString("type_doc");
                 int nbPage = rs.getInt("nb_pages");
                 boolean adulte = rs.getBoolean("adulte");
-                int reserveurNumero = rsr.getInt("idabo");
-                int emprunteurNumero = rse.getInt("idabo");
 
                 IDocument document = null;
 
-                if (reserveurNumero != -1) {
-                    getReservation().put(reserveurNumero, id_doc);
-                }
-                if (emprunteurNumero != -1) {
-                    getEmprunt().put(emprunteurNumero, id_doc);
-                }
-                if (disponible.equals("livre")) {
+                if (type.equals("Livre")) {
                     document = new Livres(nom_doc, id_doc, nbPage);
-                } else if (disponible.equals("dvd")) {
+                } else if (type.equals("dvd")) {
                     document = new DVD(id_doc, adulte, nom_doc);
                 }
+
                 getDocuments().put(id_doc, document);
             }
+
+            while (rsr.next()) {
+                int reserveurNumero = rsr.getInt("idabo");
+                int doc = rsr.getInt("iddoc");
+                getReservation().put(reserveurNumero, doc);
+            }
+
+            while (rse.next()) {
+                int emprunteurNumero = rse.getInt("idabo");
+                int docu = rse.getInt("iddoc");
+                getEmprunt().put(emprunteurNumero, docu);
+            }
+
+
+
         } catch (SQLException e) {
             e.printStackTrace();
-
         }
     }
 
-    public void suppReservations(int numAbo, int numDoc) {
+    public synchronized void suppReservations(int numAbo, int numDoc) {
         try (Connection conn = connect()) {
             String deleteQuery = "DELETE FROM reservation WHERE idabo = ? AND iddoc = ?";
             PreparedStatement stmt = conn.prepareStatement(deleteQuery);
@@ -167,7 +187,7 @@ public class Bd {
         }
     }
 
-    public String tempsRestantHeure(int numDoc) {
+    public synchronized String tempsRestantHeure(int numDoc) {
         String selectQuery = "SELECT date_fin_resa FROM reservation WHERE iddoc = ?";
         LocalDateTime currentDateTime = LocalDateTime.now();
 
@@ -219,209 +239,51 @@ public class Bd {
         }
     }
 
-//        public void addAlerte(int numAbo, int numDoc) {
-//            String insertQuery = "INSERT INTO alerte (id_abo, id_doc) VALUES (?, ?)";
-//            try(Connection conn = connect();
-//                PreparedStatement stmt = conn.prepareStatement(insertQuery)) {
-//
-//                stmt.setInt(1, numAbo);
-//                stmt.setInt(2, numDoc);
-//                //int rowsAffected = stmt.executeUpdate();
-//                stmt.executeUpdate();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
+    public void addAlerte(int numAbo, int numDoc) {
+        try(Connection conn = connect()) {
+            String insertQuery = "INSERT INTO alerte (idabo, iddoc) VALUES (?, ?)";
+            PreparedStatement stmt = conn.prepareStatement(insertQuery);
+            stmt.setInt(1, numAbo);
+            stmt.setInt(2, numDoc);
+            int rowsAffected = stmt.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
-//        public void checkReservation() {
-//            String selectQuery = "SELECT * FROM reservation";
-//            String deleteQuery = "DELETE FROM reservation WHERE id_abo = ? AND id_doc = ?";
-//            LocalDateTime currentDateTime = LocalDateTime.now();
-//
-//            try(Connection connection = connect();
-//                PreparedStatement selectStmt = connection.prepareStatement(selectQuery);) {
-//
-//                ResultSet resultSet = selectStmt.executeQuery();
-//
-//                while (resultSet.next()) {
-//                    int numAbo = resultSet.getInt("id_abo");
-//                    int numDoc = resultSet.getInt("id_doc");
-//                    LocalDateTime dateFinReservation = resultSet.getTimestamp("date_fin_resa").toLocalDateTime();
-//
-//                    if (dateFinReservation.isBefore(currentDateTime)) {
-//                        try (PreparedStatement deleteStmt = connection.prepareStatement(deleteQuery)) {
-//                            deleteStmt.setInt(1, numAbo);
-//                            deleteStmt.setInt(2, numDoc);
-//                            deleteStmt.executeUpdate();
-//                            documentHashMap.get(numDoc).retourner();
-//                            System.out.println("La réservation pour l'abonné " + numAbo + " et le document " + numDoc + " a été supprimée car elle a expiré.");
-//                        } catch (SQLException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-//                }
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
+    public synchronized void checkReservation() {
+        String selectQuery = "SELECT * FROM reservation";
+        String deleteQuery = "DELETE FROM reservation WHERE idabo = ? AND iddoc = ?";
+        LocalDateTime currentDateTime = LocalDateTime.now();
 
-//    // Méthode pour ajouter une réservation
-//    public static void reservation(int numAbo, int numDoc) {
-//        String checkReservationQuery = "SELECT * FROM Reservation WHERE  iddoc = ?"; // Vérifier si la réservation existe déjà
-//        String checkEmpruntQuery = "SELECT disponible FROM Document WHERE id_doc = ?"; // Vérifier si le document est disponible
-//        String insertQuery = "INSERT INTO Reservation (idabo, iddoc, date_resa) VALUES (?, ? , ?)"; // Ajouter la réservation
-//
-//        try (Connection conn = connect();
-//             PreparedStatement checkReservationStmt = conn.prepareStatement(checkReservationQuery)) {
-//
-//            // Vérifier si la réservation existe déjà
-//
-//            checkReservationStmt.setInt(1, numDoc);
-//            ResultSet reservationRs = checkReservationStmt.executeQuery();
-//
-//            if (!reservationRs.next()) { // Si la réservation n'existe pas déjà
-//                try (PreparedStatement checkEmpruntStmt = conn.prepareStatement(checkEmpruntQuery)) {
-//
-//                    //expiration
-//                    LocalDateTime expirationTime = LocalDateTime.now().plusSeconds(60);
-//                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-//                    String expirationStr = expirationTime.format(formatter);
-//
-//                    // Vérifier si le document est emprunté (disponible = 0)
-//                    checkEmpruntStmt.setInt(1, numDoc);
-//                    ResultSet empruntRs = checkEmpruntStmt.executeQuery();
-//
-//                    if (empruntRs.next()) {
-//                        int disponible = empruntRs.getInt("disponible");
-//
-//                        if (disponible == 0) { // Si le document n'est pas disponible (emprunté)
-//                            System.out.println("Le document est déjà emprunter");
-//                        } else {
-//                            // Si le document est disponible, procéder à la réservation
-//                            try (PreparedStatement insertStmt = conn.prepareStatement(insertQuery)) {
-//                                insertStmt.setInt(1, numAbo);
-//                                insertStmt.setInt(2, numDoc);
-//                                //ajout date expiration
-//                                insertStmt.setString(3, expirationStr);
-//                                insertStmt.executeUpdate();
-//                                System.out.println("Réservation ajouter avec succes  de"+LocalDateTime.now()+"A" + expirationStr);
-//                                checkReservation(numAbo,numDoc);
-//                            }
-//                        }
-//                    }
-//                }
-//            } else {
-//                System.out.println("Reservation deja existante.");
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Erreur lors de la reservation : " + e.getMessage());
-//        }
-//    }
-//
-//
-//    public static void emprunt(int numAbo, int numDoc) {
-//        String checkEmpruntQuery = "SELECT disponible FROM Document WHERE id_doc = ?"; // Vérifier si le document est disponible
-//        String updateEmpruntQuery = "UPDATE Document SET disponible = 0 WHERE id_doc = ?"; // Mettre à jour le document en emprunté
-//        String insertEmpruntQuery = "INSERT INTO Emprunt (idabo, iddoc) VALUES (?, ?)"; // Ajouter l'emprunt
-//
-//        try (Connection conn = connect();
-//             PreparedStatement checkEmpruntStmt = conn.prepareStatement(checkEmpruntQuery)) {
-//
-//            // Vérifier si le document est déjà emprunté
-//            checkEmpruntStmt.setInt(1, numDoc);
-//            ResultSet empruntRs = checkEmpruntStmt.executeQuery();
-//
-//            if (empruntRs.next()) {
-//                int disponible = empruntRs.getInt("disponible");
-//
-//                if (disponible == 0) { // Si le document est déjà emprunté
-//                    System.out.println("Le document est deja emprunter, il n'est pas disponible.");
-//                } else {
-//                    // Si le document est disponible, procéder à l'emprunt
-//                    try (PreparedStatement updateStmt = conn.prepareStatement(updateEmpruntQuery);
-//                         PreparedStatement insertStmt = conn.prepareStatement(insertEmpruntQuery)) {
-//
-//                        // Mettre à jour l'état du document pour le marquer comme emprunté
-//                        updateStmt.setInt(1, numDoc);
-//                        updateStmt.executeUpdate();
-//
-//                        // Ajouter l'emprunt dans la table Emprunt
-//                        insertStmt.setInt(1, numAbo);
-//                        insertStmt.setInt(2, numDoc);
-//                        insertStmt.executeUpdate();
-//
-//                        System.out.println("Emprunt effectuer avec succes.");
-//                    }
-//                }
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Erreur lors de l'emprunt : " + e.getMessage());
-//        }}
-//
-//    public static void retour(int numAbo, int numDoc) {
-//        String checkQuery = "SELECT * FROM Emprunt WHERE idabo = ? AND iddoc = ?";
-//        String deleteQuery = "DELETE FROM Emprunt WHERE idabo = ? AND iddoc = ?";
-//        String updateQuery = "UPDATE Document SET disponible = 1 WHERE id_doc = ?";
-//
-//        try (Connection conn = connect();
-//             PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
-//
-//            checkStmt.setInt(1, numAbo);
-//            checkStmt.setInt(2, numDoc);
-//            ResultSet rs = checkStmt.executeQuery();
-//
-//            if (rs.next()) { // Vérifier si l'emprunt existe
-//                try (PreparedStatement deleteStmt = conn.prepareStatement(deleteQuery);
-//                     PreparedStatement updateStmt = conn.prepareStatement(updateQuery)) {
-//
-//                    //Supprimer l'entrée d'emprunt
-//                    deleteStmt.setInt(1, numAbo);
-//                    deleteStmt.setInt(2, numDoc);
-//                    deleteStmt.executeUpdate();
-//
-//                    // Mettre à jour la disponibilité du document
-//                    updateStmt.setInt(1, numDoc);
-//                    updateStmt.executeUpdate();
-//
-//                    System.out.println("Retour effectué avec succes.");
-//                }
-//            } else {
-//                System.out.println("Aucun emprunt trouvé pour ce document.");
-//            }
-//        } catch (SQLException e) {
-//            System.out.println("Erreur lors du retour du document : " + e.getMessage());
-//        }
-//    }
-//
-//    public  static void checkReservation(int numAbo, int numDoc) throws SQLException {
-//        String deleteExpiredQuery = "DELETE FROM Reservation WHERE date_resa <= datetime('now')";
-//        String checkQuery = "SELECT date_resa FROM Reservation WHERE idabo = ? AND iddoc = ?";
-//
-//        try (Connection conn = connect();
-//             PreparedStatement deleteStmt = conn.prepareStatement(deleteExpiredQuery);
-//             PreparedStatement checkStmt = conn.prepareStatement(checkQuery)) {
-//
-//            // Supprimer les réservations expirées
-//            deleteStmt.executeUpdate();
-//
-//            // Vérifier si la réservation existe encore
-//            checkStmt.setInt(1, numAbo);
-//            checkStmt.setInt(2, numDoc);
-//            ResultSet rs = checkStmt.executeQuery();
-//
-//            if (rs.next()) {
-//                Timestamp timestamp = rs.getTimestamp("date_resa");
-//                LocalDateTime dateResa = timestamp.toLocalDateTime();
-//                LocalDateTime now = LocalDateTime.now();
-//
-//                if (dateResa.isBefore(now)) {
-//                    System.out.println("La reservation a expirer");
-//                } else {
-//                    System.out.println("La reservation est encore valide.");
-//                }
-//            } else {
-//                System.out.println("Aucune réservation trouvée (elle a peut-etre expirer).");
-//            }
-//        }
-//    }
-}
+        try(Connection connection = connect();
+            PreparedStatement selectStmt = connection.prepareStatement(selectQuery);) {
+
+            ResultSet resultSet = selectStmt.executeQuery();
+
+            while (resultSet.next()) {
+                int numAbo = resultSet.getInt("idabo");
+                int numDoc = resultSet.getInt("iddoc");
+                LocalDateTime dateFinReservation = resultSet.getTimestamp("date_fin_resa").toLocalDateTime();
+
+                if (dateFinReservation.isBefore(currentDateTime)) {
+                    try (PreparedStatement deleteStmt = connection.prepareStatement(deleteQuery)) {
+                        deleteStmt.setInt(1, numAbo);
+                        deleteStmt.setInt(2, numDoc);
+                        deleteStmt.executeUpdate();
+                        synchronized (documentHashMap.get(numDoc)) {
+                            documentHashMap.get(numDoc).retourner(getAbonnes().get(numAbo));
+                        }
+                        System.out.println("La réservation pour l'abonné " + numAbo + " et le document " + numDoc + " a été supprimée car elle a expiré.");
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }}

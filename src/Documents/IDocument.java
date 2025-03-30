@@ -9,5 +9,6 @@ public interface IDocument {
     void emprunter(Abonne ab) throws EmpruntException;
 
     // sert au retour d’un document ou à l’annulation d‘une réservation
-    void retourner();
+    //Modifiacation de l'interface pour la certif geremino desoles on a essayé sans mais on a pas pu
+    void retourner(Abonne ab);
 }

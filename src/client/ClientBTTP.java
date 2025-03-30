@@ -60,6 +60,10 @@ public class ClientBTTP {
                 if (response == null) {
                     break; // Le serveur a fermé la connexion
                 }
+                if(response.startsWith("ERREUR:")|| response.startsWith("OK")){
+                    System.out.println( response);
+                    break;
+                }
 
                 System.out.println("Serveur: " + response);
             }
